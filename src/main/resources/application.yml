@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: LBGateway
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: helloservice-route
+#          uri: lb://LBSERVICE
+#          predicates:
+#            - Path=/test/**
+server:
+  port: 7777
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
+#eureka: 
+#  client:
+#    service-url:
+#      default-zone: http://localhost:8761/eureka
